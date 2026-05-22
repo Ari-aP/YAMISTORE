@@ -1195,7 +1195,7 @@ async function eliminarCategoria(id){
   await cargarDatos();renderCategorias();toast('Eliminada');
 }
 
-function renderHome(){
+
   const hoy=new Date();
   document.getElementById('hoy-fecha').textContent=hoy.toLocaleDateString('es-PE',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
   const hoyStr=hoy.toISOString().slice(0,10);
@@ -1218,7 +1218,6 @@ function renderHome(){
   if(bajo.length===0)cont.innerHTML='<div class="empty" style="padding:20px;"><div class="empty-text">Todo OK ✨</div></div>';
   else cont.innerHTML=bajo.slice(0,5).map(p=>productoCardHTML(p,false)).join('');
 }
-
 
 async function cambiarRol(uid,nr){
   if(!confirm(`¿Cambiar a ${nr==='admin'?'Administradora':'Vendedora'}?`))return;
